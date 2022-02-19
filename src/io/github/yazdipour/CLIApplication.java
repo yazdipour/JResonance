@@ -2,7 +2,7 @@ package io.github.yazdipour;
 
 import java.io.IOException;
 
-public class Main {
+public class CLIApplication {
 
     /**
      * Q3. Create a command line application that receives the parameters for a given resonance
