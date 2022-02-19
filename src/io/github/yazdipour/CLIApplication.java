@@ -29,7 +29,7 @@ public class CLIApplication {
         try {
             HarmonicOscillatorParameters parameters = new HarmonicOscillatorParameters(amplitude, omega0, qFactor);
             HarmonicOscillatorModel oscillator = new HarmonicOscillatorModel(parameters);
-            oscillator.writeToFile(filename, 100, 1000, 100);
+            oscillator.writeToFile(filename);
         } catch (FitFailedException e) {
             System.err.println(e.getMessage());
         } catch (IOException ex) {

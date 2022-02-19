@@ -41,15 +41,12 @@ public class HarmonicOscillatorModel implements ResonanceModel {
      * Calculate harmonic oscillator and write to file
      *
      * @param fileName      output filename
-     * @param startFreq     starting frequency
-     * @param stopFreq      stopping frequency
-     * @param stepFreq      step frequency
      */
-    public void writeToFile(String fileName, double startFreq, double stopFreq, double stepFreq) throws IOException {
+    public void writeToFile(String fileName) throws IOException {
         PrintWriter writer = new PrintWriter(fileName, StandardCharsets.UTF_8);
         writer.println("# Frequency\tSpectral_Power");
-        for (double freq = startFreq; freq <= stopFreq; freq += stepFreq) {
-            double spectralPower = evaluateSpectralPowerAt(startFreq, parameters);
+        for (double freq = 100; freq <= 10000; freq += 100) {
+            double spectralPower = evaluateSpectralPowerAt(freq, parameters);
             writer.printf("%7.1f\t\t%1.2e\n", freq, spectralPower);
         }
         writer.close();
